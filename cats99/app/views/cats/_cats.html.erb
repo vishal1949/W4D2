@@ -1,0 +1,25 @@
+
+<% if action == :index%>
+  <li>
+      <ul>
+      <li>id: <%=cat.id%></li>
+      <li>name: <%=cat.name%></li>
+      <li>birthdate: <%=cat.birth_date%></li>
+      <li>color: <%=cat.color%></li>
+      <li>sex: <%=cat.sex%></li>
+      <li>description: <%=cat.description%></li>
+      </ul>
+      <br>
+  </li>
+<% elsif action == :show%>
+  <li>
+      <ul>
+      <li>name: <%=cat.name%></li>
+      <li>birthdate: <%=cat.birth_date%></li>
+      <li>color: <%=cat.color%></li>
+      <li>sex: <%=cat.sex%></li>
+      <li>description: <%=cat.description%></li>
+      </ul>
+      <br>
+  </li>
+  <%end%>

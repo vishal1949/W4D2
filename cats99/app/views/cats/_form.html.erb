@@ -1,0 +1,42 @@
+<% if type == :new %>
+  <% action_url = cats_url %>
+<% elsif type == :edit %>
+<% action_url = cat_url(cat) %>
+
+<% end %>
+
+<form action= "<%= action_url %>" method= "post"> 
+<%if type == :edit %>
+<input type="hidden" name="_method" value="patch"></input>
+<% end %>
+  <label for="name">Name: </label>
+
+  <input type= "text" id= "name" name= "cat[name]" value="<%=cat.name%>"></input>
+  <br>
+  <br>
+  <label for="birth_date">Birthdate: </label>
+  <input type= "text" id="birth_date" name="cat[birth_date]" value="<%=cat.birth_date%>"></input>
+  <p>Select a sex: &nbsp &nbsp
+  <label for="sex">M &nbsp</label>
+  <input type= "radio" id="m" name="cat[sex]" value="M"></input>
+  <label for="sex">F</label>
+  <input type= "radio" id="f" name="cat[sex]" value="F"></input>
+  </p>
+  <label for="color">Color: </label>
+  <select id= "color", name= "cat[color]" value = "<%cat.color%>"></input>
+    <option value="">--Please choose an option--</option>
+    <option value="red">red</option>
+    <option value="white">white</option>
+    <option value="blue">blue</option>
+    <option value="audi">audi</option>
+  </select>
+  <br>
+  <br>
+  <label for="description">Description: </label>
+
+  <input type= "text" id="description" name="cat[description]" value="<%=cat.description%>"></input>
+  <br>
+  <br>
+  <input type="submit" value= "GIVE ME YOUR EL GATO"></input>
+  
+</form>
